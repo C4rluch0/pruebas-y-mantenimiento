@@ -1,0 +1,972 @@
+/* Estilos generales para todas las páginas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Variables de color */
+:root {
+    --cinemax-red: #e50914;
+    --cinemax-dark: #141414;
+    --cinemax-dark-transparent: rgba(20, 20, 20, 0.7);
+    --cinemax-gray-dark: #333;
+    --cinemax-gray-medium: #808080;
+    --cinemax-gray-light: #b3b3b3;
+    --cinemax-gray-lighter: #e5e5e5;
+    --cinemax-white: #fff;
+}
+
+/* Estilos para la barra de navegación (compartida en varias páginas) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(to bottom, var(--cinemax-dark-transparent) 0%, rgba(0,0,0,0) 100%);
+}
+
+.logo {
+    width: 120px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--cinemax-gray-lighter);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--cinemax-white);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: var(--cinemax-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinemax-white);
+    cursor: pointer;
+}
+
+/* Estilos para botones (compartidos) */
+.btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--cinemax-red);
+    color: var(--cinemax-white);
+}
+
+.btn-primary:hover {
+    background-color: #f40612;
+}
+
+.btn-secondary {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: var(--cinemax-white);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(109, 109, 110, 0.9);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--cinemax-gray-medium);
+    border: 1px solid var(--cinemax-gray-medium);
+}
+
+.btn-outline:hover {
+    color: var(--cinemax-white);
+    border-color: var(--cinemax-white);
+}
+
+/* Página de inicio (home) */
+.home-body {
+    background-color: var(--cinemax-dark);
+    color: var(--cinemax-white);
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--cinemax-white);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.content-section {
+    padding: 50px;
+    position: relative;
+    z-index: 10;
+    margin-top: -100px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 10px 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    min-width: 220px;
+    height: 120px;
+    background-color: var(--cinemax-gray-dark);
+    border-radius: 4px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.carousel-item:hover {
+    transform: scale(1.1);
+}
+
+/* Página de registro */
+.register-body {
+    background-color: var(--cinemax-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-container {
+    background-color: var(--cinemax-gray-dark);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+}
+
+.register-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--cinemax-white);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--cinemax-red);
+}
+
+.error-message {
+    color: var(--cinemax-red);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: var(--cinemax-red);
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.terms {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Página de login */
+.login-body {
+    background-color: var(--cinemax-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: var(--cinemax-gray-dark);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    padding: 60px 68px;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 28px;
+    text-align: center;
+    color: var(--cinemax-white);
+}
+
+.login-container input {
+      width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.login-container input:focus {
+    outline: none;
+    background-color: #454545;
+}
+
+.remember-help {
+    display: flex;
+    justify-content: space-between;
+    color: var(--cinemax-gray-light);
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+.remember-help a {
+    color: var(--cinemax-gray-light);
+    text-decoration: none;
+}
+
+.remember-help a:hover {
+    text-decoration: underline;
+}
+
+.signup-link {
+    color: #737373;
+    margin-top: 16px;
+}
+
+.signup-link a {
+    color: var(--cinemax-white);
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.recaptcha {
+    font-size: 0.8rem;
+    color: #8c8c8c;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.recaptcha a {
+    color: #0071eb;
+    text-decoration: none;
+}
+
+/* Página de favoritos */
+.favorites-body {
+    background-color: var(--cinemax-dark);
+    color: var(--cinemax-white);
+}
+
+.profile-header {
+    padding: 150px 50px 50px;
+    background: linear-gradient(to bottom, var(--cinemax-dark-transparent) 0%, rgba(0,0,0,0) 100%);
+}
+
+.profile-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.profile-description {
+    max-width: 600px;
+    color: var(--cinemax-gray-light);
+    margin-bottom: 30px;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.favorite-item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.favorite-item:hover {
+    transform: scale(1.05);
+}
+
+.favorite-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.favorite-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.favorite-item:hover .favorite-overlay {
+    opacity: 1;
+}
+
+.remove-btn {
+    background-color: var(--cinemax-red);
+    color: var(--cinemax-white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Página de creación de perfil */
+
+.perfil-body{
+    background-color: var(--cinemax-dark);
+}
+
+.profile-management {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.profile-title {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: var(--cinemax-white);
+}
+
+.profile-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    color: var(--cinemax-gray-light);
+}
+
+.profiles-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 4px;
+    background-color: var(--cinemax-gray-dark);
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    color: var(--cinemax-gray-light);
+}
+
+.profile:hover .profile-name {
+    color: var(--cinemax-white);
+}
+
+.add-profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 2px dashed #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-profile:hover {
+    border-color: var(--cinemax-white);
+    color: var(--cinemax-white);
+}
+
+/* Modal para crear perfil */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #181818;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.modal-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--cinemax-white);
+}
+
+.avatar-selection {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.avatar-option {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.avatar-option.selected {
+    border-color: var(--cinemax-white);
+}
+
+.avatar-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-btn.cancel {
+    background-color: transparent;
+    color: var(--cinemax-white);
+    border: none;
+}
+
+.modal-btn.continue {
+    background-color: var(--cinemax-red);
+    color: var(--cinemax-white);
+    border: none;
+}
+
+/* Footer común */
+footer {
+    padding: 50px;
+    text-align: center;
+    color: var(--cinemax-gray-medium);
+    font-size: 0.9rem;
+}
+
+/* Estilos específicos para la página de bienvenida */ 
+        .welcome-body {
+            background-color: var(--cinemax-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .welcome-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .welcome-content {
+            max-width: 800px;
+            width: 100%;
+            padding: 2rem;
+            background-color: var(--cinemax-dark);
+            border-radius: 8px;
+        }
+
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .welcome-logo {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cinemax-red);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--cinemax-white);
+        }
+
+        .welcome-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .features-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            background-color: rgba(109, 109, 110, 0.2);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--cinemax-red);
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--cinemax-white);
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: var(--cinemax-gray-light);
+            line-height: 1.5;
+        }
+
+    /*Estilos especificos de soporte*/
+
+    .equipo-body {
+        background-color: var(--cinemax-dark);
+    }
+   
+    .equipo-header {
+        background: linear-gradient(90deg, var(--cinemax-dark) 0%, var(--cinemax-dark) 100%);
+        padding: 25px 0 15px 0;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(50,50,70,0.08);
+    }
+
+    .equipo-header h1 {
+        margin: 0;
+        color: var(--cinemax-red);
+        letter-spacing: 1px;
+    }
+
+   
+    .equipo-contenido {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+ .descripcion-equipo {
+    text-align: center;
+    margin: 30px auto; 
+    font-size: 1.07em;
+    background: var(--cinemax-gray-light);
+    border-radius: 10px;
+    padding: 15px 28px 14px 28px;
+    box-shadow: 0 2px 10px #f0f0f0;
+    max-width: 700px;
+    display: block; /* Asegura que funcione el margin auto */
+}
+
+    /* Contenedor del equipo */
+    .equipo-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Tarjetas de miembros */
+    .miembro-card {
+        background: var(--cinemax-gray-dark);
+        border-radius: 16px;
+        padding: 25px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid #e4e4e4;
+    }
+
+    .miembro-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .miembro-foto {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 20px auto;
+        border: 4px solid var(--cinemax-red);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .miembro-info h3 {
+        margin: 0 0 10px 0;
+        color: var(--cinemax-red);
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .miembro-info p {
+        margin: 8px 0;
+        font-size: 1.05em;
+        color: var(--cinemax-white);
+    }
+
+    .miembro-info .cedula {
+        background: var(--cinemax-gray-lighter);
+        color: var(--cinemax-gray-medium);
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 7px;
+        display: inline-block;
+        margin: 5px 0;
+    }
+
+    .miembro-info .edad {
+        background: var(--cinemax-gray-lighter);
+        color: var(--cinemax-gray-medium);
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 7px;
+        display: inline-block;
+        margin: 5px 0;
+    }
+
+     /* Estilos específicos para la página de membresía */
+        .membership-body {
+            background-color: var(--cinemax-dark);
+            color: var(--cinemax-white);
+            padding-top: 80px;
+        }
+        
+        .membership-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .membership-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .membership-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .membership-card {
+            background-color: var(--cinemax-gray-dark);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .membership-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cinemax-white);
+        }
+        
+        .membership-card.selected {
+            border-color: var(--cinemax-red);
+            position: relative;
+        }
+        
+        .membership-card.selected::after {
+            content: "✓";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background-color: var(--cinemax-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .membership-name {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--cinemax-white);
+        }
+        
+        .membership-price {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--cinemax-white);
+        }
+        
+        .membership-price span {
+            font-size: 1rem;
+            color: var(--cinemax-gray-light);
+        }
+        
+        .membership-features {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+        
+        .membership-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .membership-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--cinemax-red);
+        }
+        
+        .payment-methods {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--cinemax-gray-medium);
+        }
+        
+        .payment-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .payment-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .payment-option {
+            width: 60px;
+            height: 40px;
+            background-color: var(--cinemax-gray-dark);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--cinemax-gray-light);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--cinemax-gray-dark);
+            border: 1px solid var(--cinemax-gray-medium);
+            border-radius: 4px;
+            color: var(--cinemax-white);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--cinemax-white);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+
+		.cinemax-logo {
+		    display: block;
+		    margin: 0 auto 20px;
+		    width: 150px;
+		    height: 40px;
+		    background-image: url('https://i.imgur.com/mEVz9SH.png');
+		    background-repeat: no-repeat;
+		    background-position: center center;
+		    background-size: contain;
+		}
+
+		 .main-content {
+		    padding-top: 80px; /* despeja la navbar fija */
+		}
+		
+		.carousel-item {
+		    background-position: center;
+		    background-size: contain;
+		    background-repeat: no-repeat;
+		}
+		
+		.nav-links a {
+		    padding: 0 20px; /* separa Inicio y Mi lista */
+		}
