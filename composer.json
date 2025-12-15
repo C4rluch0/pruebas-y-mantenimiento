@@ -1,0 +1,17 @@
+{
+    "name": "cinemax/cinemax-plus",
+    "description": "Plataforma de Streaming",
+    "require": {
+        "php": ">=7.4",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "php-webdriver/webdriver": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cinemax\\": "src/"
+        }
+    }
+}
