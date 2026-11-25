@@ -2,8 +2,9 @@
 // db.php
 $host = 'localhost';
 $db   = 'cinemax_plus';
-$user = 'root';
-$pass = ''; 
+$user = getenv('CINEMAX_DB_USER') ?: 'root';
+$pass = getenv('CINEMAX_DB_PASSWORD');
+$pass = $pass === false ? '' : $pass;
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
